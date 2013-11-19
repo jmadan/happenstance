@@ -71,6 +71,11 @@
             happenStance is a new people connect app that lets you share location-based messages, photos and videos with friends, family and people of this world!
           </h4>
           <br>
+          {{#if msg}}
+            <div class="alert alert-success">
+              {{msg}}
+            </div>
+          {{/if}}
           <div class="col-md-12 col-md-offset-2">
           		<h4>Sign up for an invite and we will let you know when we are ready to launch</h4>
           	
@@ -82,12 +87,12 @@
                       <input type="email" name="user[email]" class="form-control" id="inputEmail" placeholder="Enter email" style="border-radius: 6px; color: rgb(120, 135, 158); margin: 0px 0px 22px; outline: 0px none; padding: 11px 4%;resize: none;">
                     </div>
                     <div class="col-sm-3">
-                      <select name="user[platform]" class="form-control" id="platform">
-                    <option selected="true">Preferred Platform</option>
-                    <option value="Android">Android</option>
-                    <option value="Blackberry">Blackberry</option>
-                    <option value="IOS">IOS</option>
-                  </select>
+                      <select name="user[mobile_platform]" class="form-control" id="platform">
+                        <option selected="true">Preferred Platform</option>
+                        <option value="Android">Android</option>
+                        <option value="Blackberry">Blackberry</option>
+                        <option value="IOS">IOS</option>
+                      </select>
                     </div>
                     <div class="col-sm-3">
                       <button type="submit" class="btn btn-primary">Submit</button>
