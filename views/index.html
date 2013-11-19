@@ -1,9 +1,17 @@
 <!DOCTYPE html>
-<html>
-  
-  <head data-gwd-animation-mode="quickMode">
+<html lang="en">
+  <head>
     <title>happenStance</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta property="og:type" content="mobile app" />
+    <meta property="og:url" content="http://www.happenstance.me" />
+    <meta property="og:site_name" content="happenStance" />
+    <link rel="canonical" href="http://www.happenstance.com" />
+    <meta property="og:image" content="http://dry-island-5789.herokuapp.com/images/happenstance_banner.png" />
+    <meta content="HappenStance.Me - App to conect people anywhere in the world based on location based messages, pictures and videos." about="about happenStance.Me" property="dc:title" />
+    <meta name="description" content="Connecting friends, family and strangers all around the world through location based messages, pictures and videos." />
+    <meta property="og:title" content="happenStance Me | Connect through location" />
+    <meta property="og:description" content="App to conect people anywhere in the world based on location based messages, pictures and videos.." />
     <style type="text/css">
       html, body {
         width: 100%;
@@ -17,10 +25,10 @@
     </style>
     <!--<script data-main="scripts/main" src="scripts/require.js"></script>-->
     <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
-    <!-- <link rel="stylesheet" href="css/bootstrap-theme.min.css"> -->
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.min.css">
   </head>
   
-  <body lang="en">
+  <body>
     <div class="container">
       <div class="row">
         <nav class="navbar navbar-default" role="navigation">
@@ -63,23 +71,36 @@
             happenStance is a new people connect app that lets you share location-based messages, photos and videos with friends, family and people of this world!
           </h4>
           <br>
-          <div class="col-md-10 col-md-offset-2">
+          <div class="col-md-12 col-md-offset-2">
           		<h4>Sign up for an invite and we will let you know when we are ready to launch</h4>
           	
-            <form role="form">
+            <form role="form" method="post" action="/subscribe" id="form" name="form">
               <div class="form-group">
-              	<div class="col-sm-6">
-                	<input type="email" class="form-control input-lg" id="inputEmail" placeholder="Enter email" style="border-radius: 6px; color: rgb(120, 135, 158); margin: 0px 0px 22px; outline: 0px none; padding: 11px 4%;resize: none;">
-              	</div>
-              </div>
-              <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+                <div class="container">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <input type="email" name="user[email]" class="form-control" id="inputEmail" placeholder="Enter email" style="border-radius: 6px; color: rgb(120, 135, 158); margin: 0px 0px 22px; outline: 0px none; padding: 11px 4%;resize: none;">
+                    </div>
+                    <div class="col-sm-3">
+                      <select name="user[platform]" class="form-control" id="platform">
+                    <option selected="true">Preferred Platform</option>
+                    <option value="Android">Android</option>
+                    <option value="Blackberry">Blackberry</option>
+                    <option value="IOS">IOS</option>
+                  </select>
+                    </div>
+                    <div class="col-sm-3">
+                      <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </div>
+                </div>
             </form>
             </div>
           </div>
       </div>
       <hr>
       <div class="footer col-md-offset-4">
-          <p>♥ from the thirtySix team</p>
+          <p> ♥ from the thirtySix team </p>
       </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
