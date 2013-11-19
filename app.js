@@ -9,6 +9,9 @@ var express = require('express');
 var http = require('http');
 var path = require('path');
 var hbs = require('hbs');
+var mongo = require('mongodb');
+var monk = require('monk');
+var db = monk('mongodb://happendbuser:happendbuser@ds053958.mongolab.com:53958/heroku_app19530200');
 
 var app = express();
 
@@ -18,6 +21,7 @@ app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
 app.engine('html', hbs.__express);
+
 app.use(express.bodyParser());
 app.use(express.favicon());
 app.use(express.logger('dev'));
@@ -68,6 +72,18 @@ app.get('/faq', function(req, res){
 
 app.get('/privacy', function(req, res){
     res.render('privacy');
+})
+
+app.post('/subscribe', function(req, res){
+    var collection = db.get('subscribe');
+    collection.insert({ 'email': req.body.user.email,'mobile_platform': req.body.user.mobile_platform }, function (err, doc) {
+        if (err) {
+            console.log('Sorry, there is some error.');
+        } else {
+            res.render('index', {msg : 'Thank you for your interest. you\'ve been added to our beta program.'})
+        };
+    });
+    res.send
 })
 
 http.createServer(app).listen(app.get('port'), function(){
