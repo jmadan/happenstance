@@ -63,7 +63,7 @@ hbs.registerHelper('block', function(name) {
 // app.get('/', routes.index);
 
 app.get('/', function(req, res){
-	res.render('index');
+	res.render('index.html');
 })
 
 app.get('/faq', function(req, res){

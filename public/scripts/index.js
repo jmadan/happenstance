@@ -1,0 +1,22 @@
+var HappenStanceView = Backbone.View.extend({
+        el: '.jumbotron',
+        render: function(){
+          this.$el.html("<h2>"+'Connect with people'+"</h2><p>leave a message at a place and experience Seredipity.</p>");
+        }
+      });
+
+      var Router =  Backbone.Router.extend({
+        routes: {
+          '':'home'
+        }
+      });
+
+      var happenStanceView = new HappenStanceView();
+
+      var router = new Router();
+      router.on('route:home', function(){
+        happenStanceView.render();
+        console.log("hello");
+      });
+      
+      Backbone.history.start();
