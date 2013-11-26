@@ -74,6 +74,10 @@ app.get('/privacy', function(req, res){
     res.render('privacy');
 })
 
+app.get('/forgot', function(req,res){
+    res.render('forgot');
+})
+
 app.post('/subscribe', function(req, res){
     var collection = db.get('subscribe');
     collection.insert({ 'email': req.body.user.email,'mobile_platform': req.body.user.mobile_platform }, function (err, doc) {
