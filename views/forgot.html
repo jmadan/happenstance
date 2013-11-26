@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>happenStance</title>
+    <title>happenStance Forgot Password</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta property="og:type" content="mobile app" />
     <meta property="og:url" content="http://www.happenstance.me" />
@@ -35,12 +35,6 @@
         <nav class="navbar navbar-default" role="navigation">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-	            <span class="sr-only">Toggle navigation</span>
-				 <span class="icon-bar">a</span>
-				 <span class="icon-bar">b</span>
-				 <span class="icon-bar">c</span>
-            </button>
             <a class="navbar-brand" href="/" title="home"><img src="images/happenstance_banner.png" alt="home"></a>
           </div>
           <!-- Collect the nav links, forms, and other content for toggling -->
@@ -59,14 +53,14 @@
         <div class="col-xs-18 col-md-12">
           
           <div class="jumbotron" id="jumbo">
-            
+            <h2>
+                Connect with people
+            </h2> 
+            <p>leave a message at a place and experience Seredipity.</p>
           </div>
            <h2>
-            <span class="label label-primary">Introducing happenStance Me</span>
-          </h2> 
-           <h4>
-            happenStance is a new way to connect with friends, family and others through location based conversations consisting of messages, photos and videos.
-          </h4>
+            <span class="label label-primary">Forgot Password</span>
+          </h2>
           <br>
           {{#if msg}}
             <div class="alert alert-success col-md-6 col-md-offset-2">
@@ -74,9 +68,7 @@
             </div>
           {{/if}}
           <div class="col-md-10 col-md-offset-2">
-          		<h4>Sign up for an invite and we will let you know when we are ready to launch</h4>
-          	
-            <form role="form" method="post" action="/subscribe" id="form" name="form">
+            <form role="form" method="post" action="/forgot" id="form" name="form">
               <div class="form-group">
                 <div class="container">
                   <div class="row">
@@ -84,15 +76,7 @@
                       <input type="email" name="user[email]" class="form-control" id="inputEmail" placeholder="Enter email" style="border-radius: 6px; color: rgb(120, 135, 158); margin: 0px 0px 22px; outline: 0px none; padding: 11px 4%;resize: none;">
                     </div>
                     <div class="col-sm-3">
-                      <select name="user[mobile_platform]" class="form-control" id="platform">
-                        <option selected="true">Preferred Platform</option>
-                        <option value="Android">Android</option>
-                        <option value="Blackberry">Blackberry</option>
-                        <option value="IOS">IOS</option>
-                      </select>
-                    </div>
-                    <div class="col-sm-3">
-                      <button type="submit" class="btn btn-primary">Submit</button>
+                      <button type="submit" class="btn btn-primary">Reset Password</button>
                     </div>
                   </div>
                 </div>
