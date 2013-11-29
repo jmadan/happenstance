@@ -1,7 +1,7 @@
 var HappenStanceView = Backbone.View.extend({
         el: '.jumbotron',
         render: function(){
-          this.$el.html("<h2>"+'Connect with people'+"</h2><p>leave a message at a place and experience Seredipity.</p>");
+          this.$el.html("<h2>"+'Connect with people'+"</h2><p>moments of Serendipity.</p>");
         }
       });
 
