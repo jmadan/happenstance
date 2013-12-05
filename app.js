@@ -102,27 +102,7 @@ app.post('/subscribe', function(req, res){
 })
 
 app.post('/forgot', function(req, res){
-    // var message = {
-    //     from: 'happenStance <no-reply@happenstance.com>',
-    //     to: req.body.user.email,
-    //     subject: 'Reset your happenStance password',
-    //     headers: {
-    //         'X-Laziness-Level': 1000
-    //     },
-    //     text: '',
-    //     html: '<p><b>Forgot your password</b></p><br><p>Please click on the following link to reset your password</p>'
-    // };
-    // console.log('Sending Email');
-    // transport.sendMail(message, function(error){
-    //     if (error){
-    //         console.log('Error occured');
-    //         console.log(error.message);
-    //         res.render('forgot', {msg : 'Oops! Something went wrong. Please try again.'})
-    //         return;
-    //     }
-    //     console.log('Email sent successfully!');
-    //     res.render('forgot', {msg : 'Email has been sent with instructions to reset your password.'})
-    // });
+
     jsonObject = JSON.stringify({
         "email": req.body.user.email
     });
@@ -131,32 +111,30 @@ app.post('/forgot', function(req, res){
         'Content-Length' : Buffer.byteLength(jsonObject, 'utf8')
     };
     var optionspost = {
-        host: 'http://floating-ocean.herokuapp.com',
-        path: 'api/forgot',
-        method: 'POST',
-        headers: postheaders
+        host: 'floating-ocean.herokuapp.com',
+        path: '/api/forgot',
+        method: 'POST'
+        // headers: postheaders
     };
     var reqPost = http.request(optionspost, function(resp){
-        console.log("i am here");
+        var str = ''
         resp.on('data', function(d){
-            process.stdout.write(d);
+            str += d;
+        });
+
+        resp.on('end', function(){
+            console.log(str);
         });
     });
-    
+    console.log("reqPost called");
     reqPost.write(jsonObject);
     reqPost.end();
     reqPost.on('error', function(e){
         console.error(e);
+        res.render('forgot', {msg : 'Something went wrong!.'})    
+        res.send
     });
 
-    // var collection = db.get('subscribe');
-    // collection.insert({ 'email': req.body.user.email,'mobile_platform': req.body.user.mobile_platform }, function (err, doc) {
-    //     if (err) {
-    //         console.log('Sorry, there is some error.');
-    //     } else {
-    //         res.render('index', {msg : 'Thank you for your interest. you\'ve been added to our beta program.'})
-    //     };
-    // });
     res.render('forgot', {msg : 'Email has been sent with instructions to reset your password.'})    
     res.send
 })
