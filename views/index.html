@@ -53,10 +53,10 @@
       </div>
       <div class="container">
         <h2>
-          <span class="label label-primary">Introducing happenStance Me</span>
+          <span class="label label-primary">Introducing happenStance</span>
         </h2> 
         <h4>
-          happenStance is a new way to connect with friends, family and others through location based conversations consisting of 
+          New way to connect and create memories with friends, family and others through location based conversations by sharing
           messages, photos and videos.
         </h4>
         <br>
@@ -64,7 +64,7 @@
           <ul>
             <li>Leave yourself notes around the world</li>
             <li>Connect with people present at the location and make new friends</li>
-            <li>Leave messages for special ones at their favorite places around the city</li>
+            <li>Create groups and Leave messages for special ones at their favorite places around the world</li>
             <li>Scavanger hunts!</li>
           </ul>
         </p> 
@@ -87,7 +87,7 @@
           {{/if}}
             <form role="form" method="post" action="/subscribe" id="form" name="form" class="form-inline">
               <div class="col-md-5">
-                      <input type="email" name="user[email]" class="form-control" id="inputEmail" placeholder="Enter email" style="border-radius: 6px; color: rgb(120, 135, 158); margin: 0px 0px 22px; outline: 0px none; padding: 11px 4%;resize: none;">
+                      <input type="text" data-validation="email" name="user[email]" class="form-control" id="inputEmail" placeholder="Enter email" style="border-radius: 6px; color: rgb(120, 135, 158); margin: 0px 0px 22px; outline: 0px none; padding: 11px 4%;resize: none;">
               </div>        
               <div class="col-md-5">
                       <select name="user[mobile_platform]" class="form-control" id="platform">
@@ -117,6 +117,8 @@
      
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
       <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.1.27/jquery.form-validator.min.js"></script>
+      <script>$('#form').validate();</script>
       <!-- Include all compiled plugins (below), or include individual files as needed -->
       <script src="/bootstrap/js/bootstrap.min.js"></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
