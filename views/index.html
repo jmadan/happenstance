@@ -56,7 +56,7 @@
           <span class="label label-primary">Introducing happenStance</span>
         </h2> 
         <h4>
-          New way to connect and create memories with friends, family and others through location based conversations by sharing
+          Connect and create memories with friends, family and others through location based conversations by sharing
           messages, photos and videos.
         </h4>
         <br>
@@ -85,7 +85,7 @@
               <div class="text-center"><span class="text-center">{{msg}}</span></div>
             </div>
           {{/if}}
-            <form role="form" method="post" action="/subscribe" id="form" name="form" class="form-inline">
+            <form role="form" method="post" action="/subscribe" id="subscribeform" name="subscribeform" class="form-inline">
               <div class="col-md-5">
                       <input type="text" data-validation="email" name="user[email]" class="form-control" id="inputEmail" placeholder="Enter email" style="border-radius: 6px; color: rgb(120, 135, 158); margin: 0px 0px 22px; outline: 0px none; padding: 11px 4%;resize: none;">
               </div>        
@@ -118,7 +118,7 @@
       <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
       <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.1.27/jquery.form-validator.min.js"></script>
-      <script>$('#form').validate();</script>
+      <script>$.validate();</script> 
       <!-- Include all compiled plugins (below), or include individual files as needed -->
       <script src="/bootstrap/js/bootstrap.min.js"></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
