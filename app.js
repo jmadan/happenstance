@@ -89,6 +89,11 @@ app.get('/forgot', function(req,res){
     res.render('forgot');
 })
 
+app.get('/reset:id', function(req,res){
+    res.render('resetpassword', {userid : id});
+})
+
+
 app.post('/subscribe', function(req, res){
     var collection = db.get('subscribe');
     collection.insert({ 'email': req.body.user.email,'mobile_platform': req.body.user.mobile_platform }, function (err, doc) {
