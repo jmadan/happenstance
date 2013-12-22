@@ -12,7 +12,6 @@ var path = require('path');
 var hbs = require('hbs');
 var mongo = require('mongodb');
 var monk = require('monk');
-// var db = monk('mongodb://happendbuser:happendbuser@ds053958.mongolab.com:53958/heroku_app19530200');
 var db = monk(process.env.MONGOLAB_URI);
 
 var app = express();
