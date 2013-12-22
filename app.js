@@ -12,7 +12,8 @@ var path = require('path');
 var hbs = require('hbs');
 var mongo = require('mongodb');
 var monk = require('monk');
-var db = monk('mongodb://happendbuser:happendbuser@ds053958.mongolab.com:53958/heroku_app19530200');
+// var db = monk('mongodb://happendbuser:happendbuser@ds053958.mongolab.com:53958/heroku_app19530200');
+var db = monk(process.env.MONGOLAB_URI);
 
 var app = express();
 
@@ -96,6 +97,7 @@ app.get('/reset:id', function(req,res){
 
 app.post('/subscribe', function(req, res){
     var collection = db.get('subscribe');
+    console.log(req.body.user.email)
     collection.insert({ 'email': req.body.user.email,'mobile_platform': req.body.user.mobile_platform }, function (err, doc) {
         if (err) {
             console.log('Sorry, there is some error.');
